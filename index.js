@@ -20,7 +20,10 @@ app.get('/mensagens', (req, res) => {
   });
 
 app.post('/mensagens,', (req, res) =>{
-  res.send(req.body.texto)
+  const mensagem = req.body.texto;
+  mensagem.push(mensagens);
+
+  res.send('Mensagem criada com sucesso.')
 } );
 
 app.listen(port, ()=>{
