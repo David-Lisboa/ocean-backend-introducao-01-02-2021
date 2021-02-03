@@ -34,6 +34,17 @@ app.get('/mensagens/:id', (req, res) => {
   res.send(mensagem);
 });
 
+// Atualizar(Update)
+app.put('/mensagens/:id', (req, res) => {
+  const id = req.params.id - 1;
+
+  const mensagem = req.body.texto;
+
+  mensagens[id] = mensagem;
+  
+  res.send('mensagem atualizada com sucesso.');
+});
+
 // Criar (Create)
 app.post('/mensagens', (req, res) => {
   const mensagem = req.body.texto;
