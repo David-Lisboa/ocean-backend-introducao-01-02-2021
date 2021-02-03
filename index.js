@@ -47,7 +47,7 @@ app.put('/mensagens/:id', (req, res) => {
 
   mensagens[id] = mensagem;
   
-  res.send('mensagem atualizada com sucesso.');
+  res.send('mensagem editada com sucesso.');
 });
 
 // Criar (Create)
