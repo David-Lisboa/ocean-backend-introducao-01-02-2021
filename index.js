@@ -29,10 +29,15 @@ app.get('/mensagens', (req, res) => {
 app.get('/mensagens/:id', (req, res) => {
   const id = req.params.id - 1;
 
-  const mensagem = mensagens[id];
-  
-  res.send(mensagem);
+  if (id >= mensagens.length) {
+    res.send(`Mensagem ${id + 1} não existe`);
+  } else {
+    const mensagem = mensagens[id];
+
+    res.send(mensagem)
+  };
 });
+
 
 // Atualizar(Update)
 app.put('/mensagens/:id', (req, res) => {
