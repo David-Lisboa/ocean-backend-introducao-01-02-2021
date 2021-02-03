@@ -1,4 +1,4 @@
-onst express = require('express');
+const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
@@ -25,11 +25,12 @@ app.get('/mensagens', (req, res) => {
   res.send(mensagens);
 });
 
-app.get('/mensagens/:id,', (req, res) =>{
-   console.log(req.params)
-   res.send('Ler individual')
-} );
-  
+// Ler Individual (Read Single)
+app.get('/mensagens/:id', (req, res) => {
+  console.log(req.params);
+  res.send('Ler individual por ID.');
+});
+
 // Criar (Create)
 app.post('/mensagens', (req, res) => {
   const mensagem = req.body.texto;
